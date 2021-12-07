@@ -1,0 +1,8 @@
+recursive-include ptflutter_templates *.dart
+recursive-include ptflutter_templates *.strings
+recursive-include ptflutter_templates *.yml
+recursive-include ptflutter_templates *.h
+recursive-include ptflutter_templates *.txt
+recursive-include ptflutter_templates *.md
+recursive-include ptflutter_templates *.png
+recursive-include ptflutter_templates *.plist

@@ -1,0 +1,105 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Test",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "test"
+            ],
+        },
+        {
+            "name": "Python: Rename",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "rename"
+            ],
+        },
+        {
+            "name": "Python: Gen Localization",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "gen",
+                "localization"
+            ],
+        },
+        {
+            "name": "Python: Create",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "create"
+            ],
+        },
+        {
+            "name": "Python: List UseCase",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "usecase",
+                "list",
+                "-path",
+                "lib/scenes/app/app_usecase.dart"
+            ],
+        },
+        {
+            "name": "Python: Add UseCase",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "usecase",
+                "add",
+                "-path",
+                "lib/scenes/app/app_usecase.dart",
+                "-func",
+                "Stream<bool> checkOnboard();",
+                "ValidationResult validateStringAndNumber(String text);",
+                "ValidationResult validateStrongPassword(String password);"
+            ],
+        },
+        {
+            "name": "Python: Remove UseCase",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "usecase",
+                "remove",
+                "-path",
+                "lib/scenes/app/app_usecase.dart",
+                "-func",
+                "Stream<bool> checkOnboard();"
+            ],
+        },
+        {
+            "name": "Python: Gen Stream Debug",
+            "type": "python",
+            "request": "launch",
+            "module": "ptflutter",
+            "console": "integratedTerminal",
+            "args": [
+                "gen",
+                "stream_debug"
+            ],
+        }
+    ]
+}
