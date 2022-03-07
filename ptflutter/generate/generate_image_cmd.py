@@ -2,8 +2,9 @@
 
 from ..core.command import Command
 from jinja2 import Environment, PackageLoader
+from ..utils.utils import *
 from ..utils.str_helpers import snake_to_camel, plural_to_singular
-from ..utils.file_helpers import create_file
+from ..utils.file_helpers import create_file, is_file_path_exist
 import os
 
 class ImageFile(object):
@@ -16,13 +17,19 @@ class GenerateImageCommand(Command):
         super(GenerateImageCommand, self).__init__()
 
     def run(self):
-        image_path = "lib/assets/images"
+        image_path = "assets/images"
         path = "%s/%s" % (os.getcwd(), image_path)
         list_image_files = []
+        if not is_file_path_exist(path):
+            log("Invalid folder")
+            return
         for file in os.listdir(path):
-            if file.endswith(".png") or file.endswith(".jpg"):
+            if file.endswith(".png") or file.endswith(".jpg") or file.endswith(".svg"):
                 file_name = os.path.splitext(file)[0].replace("-","_")
                 list_image_files.append(ImageFile(snake_to_camel(file_name), file))
+        if not list_image_files:
+            log("Can't find any image files")
+            return
         env = Environment(
             loader=PackageLoader('ptflutter_templates', 'gen'),
             trim_blocks=True,
@@ -33,4 +40,5 @@ class GenerateImageCommand(Command):
             image_folder=image_path,
             files=list_image_files
         )
-        create_file(content, "images", "g.dart", "lib/generated")
+        output_file = create_file(content, "images", "g.dart", "lib/generated")
+        log("[Updated] {}".format(output_file))

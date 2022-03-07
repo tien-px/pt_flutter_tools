@@ -1,10 +1,16 @@
 # Code generator for Flutter apps
 ## Installation:
 ### Install using pip3:
+### Install Python on Mac
 Open Terminal and run:
 ```
 $ brew install python3
 ```
+### Install Python on Windows
+```
+https://www.python.org/downloads/
+```
+### Install Tool:
 ```
 $ pip3 install ptflutter
 ```
